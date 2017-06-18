@@ -1,15 +1,15 @@
 package main
 
 import (
-  "fmt"
   "./sort"
   "io/ioutil"
   "strings"
   "strconv"
+  "os"
   )
 
 func main(){
-  data, err := ioutil.ReadFile("in.txt")
+  data, err := ioutil.ReadFile(os.Args[1])
 
   if err != nil{
     panic(err)
@@ -25,7 +25,9 @@ func main(){
     }
   }
 
-  fmt.Println(sort.SelectionSort(arr))
-  fmt.Println(sort.InsertionSort(arr))
-  fmt.Println(sort.MergeSort(arr))
+  sort.SelectionSort(arr)
+  sort.InsertionSort(arr)
+  sort.MergeSort(arr)
+  sort.QuickSort(arr)
+  sort.HeapSort(arr)
 }
